@@ -12,7 +12,7 @@ export const Contact = () => {
         };
 
         try {
-            const response = await fetch('https://malikibrar.vercel.app/submit/', {
+            const response = await fetch('https://malik-ibrar-developer.vercel.app/submit/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
