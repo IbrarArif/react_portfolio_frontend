@@ -1,38 +1,266 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+/* In Home.css */
+.home-container {
+  background-size: cover;
+  background-position: center;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 20px;
+  position: relative;
+  color: #fff;
 }
 
-.App-link {
-  color: #61dafb;
+.title {
+  font-size: 2.5rem;
+  font-weight: auto;
+  animation: fadeInDown 3s ease-out;
+  color: #fff;
 }
 
-@keyframes App-logo-spin {
+.about-text p {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  animation: fadeInUp 3s ease-out;
+  color: #fff;
+}
+
+.portfolio-image {
+  width: 80%;
+  max-width: 300px;
+  animation: zoomIn 2s ease-out;
+  margin-top: 0px;
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+
+/* In Home2.css */
+.home2-background {
+  width: 100%;
+  height: 100vh; /* Full viewport height */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Align content to the left */
+  padding-left: 5%; /* Space from the left edge */
+}
+
+.text-container {
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 650px; /* Adjust width as needed */
+  color: #fff; /* Ensure text color is white for contrast */
+}
+
+h1.display-1 {
+  font-size: 4rem; /* Adjust size as needed */
+  margin-bottom: 20px;
+}
+
+p.lead {
+  font-size: 2rem; /* Adjusted for readability */
+  margin-bottom: 30px;
+}
+
+.roles-list {
+  position: relative;
+  height: auto; /* Adjust height to fit content */
+  font-size: 2.5rem; /* Adjust font size as needed */
+  display: flex; /* Use flexbox to arrange roles horizontally */
+  gap: 20px; /* Space between roles */
+}
+
+.role {
+  position: absolute;
+  opacity: 0;
+  animation: roleAnimation 15s infinite;
+}
+
+.role:nth-child(1) { animation-delay: 0s; }
+.role:nth-child(2) { animation-delay: 3s; }
+.role:nth-child(3) { animation-delay: 6s; }
+.role:nth-child(4) { animation-delay: 9s; }
+.role:nth-child(5) { animation-delay: 12s; }
+
+@keyframes roleAnimation {
+  0% { opacity: 0; transform: translateY(20px); }
+  10% { opacity: 1; transform: translateY(0); }
+  20% { opacity: 1; }
+  30% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 0; transform: translateY(-20px); }
+}
+
+/* Awards css */
+.card {
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-body {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
   }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }}
+  /* In App.css */
+
+/* Global Styles */
+body {
+  background-color: black;
+  color: #fff;
+}
+
+/* Container for the awards section with background and spacing */
+.bg-dark {
+  background-color:black;
+  color: #fff;
+}
+
+/* Styling for the title */
+.title {
+  font-size: 3rem;
+  font-weight: bold;
+  animation: fadeInDown 1s ease-out;
+}
+
+/* Styling for the about text */
+.about-text {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  animation: fadeInUp 1s ease-out;
+}
+
+/* Card styling with animation */
+.card {
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Animation for fading in from the top */
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animation for fading in from the bottom */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* General fade-in animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+.card {
+  background-color: #fff;
+  color: #000;
+  border-radius: 0.5rem;
+}
+
+.card-img-top {
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+.card-body {
+  padding: 1rem;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.card-text {
+  font-size: 1rem;
+  color: #333;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+/* Custom card width */
+.custom-card-width {
+  width: 100%; /* Set to 100% width for responsiveness */
+  max-width: 400px; /* Maximum width to increase the card size */
+  margin: 0 auto; /* Center align the card */
 }
