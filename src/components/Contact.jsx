@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 export const Contact = () => {
+    const [loading, setLoading] = useState(false);
+
     const handleSubmit = async (event) => {
         event.preventDefault();
+        setLoading(true); // Set loading to true when form is submitted
         const formData = new FormData(event.target);
         const data = {
             name: formData.get('name'),
@@ -25,6 +28,8 @@ export const Contact = () => {
         } catch (error) {
             console.error('Error:', error);
             alert('Failed to submit contact form.');
+        } finally {
+            setLoading(false); // Reset loading state after submission completes
         }
     };
 
@@ -53,7 +58,9 @@ export const Contact = () => {
                                     <label htmlFor="message" className="form-label">Message</label>
                                     <textarea name="message" className="form-control" id="message" rows="5" placeholder="Enter your message" required></textarea>
                                 </div>
-                                <button type="submit" className="btn btn-primary">Submit</button>
+                                <button type="submit" className="btn btn-primary" disabled={loading}>
+                                    {loading ? 'Submitting...' : 'Submit'}
+                                </button>
                             </form>
                         </div>
                     </div>
